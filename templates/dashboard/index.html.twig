@@ -45,7 +45,7 @@
 
                         var audio = new Audio("audio/sound.mp3");
                         audio.play().then(function (val){
-                            location.reload();
+                            setTimeout(function(){ location.reload(); }, 5000);
                         }).catch( function (error) {
                             console.log(error)
                         })
