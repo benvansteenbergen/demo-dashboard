@@ -1,12 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DashboardController!{% endblock %}
+{% block title %}Popup-store Dashboard{% endblock %}
 
 {% block body %}
+
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-    .ka-ching {display:none;}
+    * { font-family: 'Montserrat', sans-serif; }
+    h1 {padding: 30px 0 30px 0; font-size: 40px;}
+    .ka-ching {display:none; position:absolute; top:0px; left:0px}
+    .box { float:left; width:33%; height:230px; display: flex; justify-content: center; align-items: center; margin: 10px 0; }
+    .box-2 { float:left; width:66%; height:230px; display: flex; justify-content: center; align-items: center }
+    .box-3 { float:left; width:100%; height:230px; display: flex; justify-content: center; align-items: center }
+    .product-image { width:200px; align-self: center; }
+    .logo img {
+        width: 100px;
+        margin-left:10%;
+        margin-right: 20px;
+        float:left;
+    }
+    .container {   }
+    .box div { align-self:center}
+    .hr { border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        clear:both;
+        margin: 50px 0 50px 0;
+        display:block;
+    }
     audio {}
 </style>
 <script type="text/javascript">
@@ -25,7 +45,7 @@
 
                         var audio = new Audio("audio/sound.mp3");
                         audio.play().then(function (val){
-
+                            location.reload();
                         }).catch( function (error) {
                             console.log(error)
                         })
@@ -45,7 +65,28 @@
     <div class="ka-ching">
         <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/hDlhfr5LTemEo" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
     </div>
-    <div style="position:relative;width:50%;height:0;padding-bottom:56.25%;float:right;"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/AhREddCSgnm7TkVKkIav8qt-C7eUYIh5" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
-    <div style="position:relative;width:50%;height:0;padding-bottom:56.25%;float:left;"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/_XGlDdfG-dg88LtuWj6AO_n9lDtYoKA7" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
+    <div class="logo"><img src="http://varnish.d45ae8f.feature.itonomy.nl/media/logo/stores/1/logo_1sqm.png" /></div>
+    <div><h1>Verkopen (vandaag)</h1></div>
+    <div style="width: 100%; clear:both">
+    <div class="box"><img class="product-image" src="http://varnish.d45ae8f.feature.itonomy.nl/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/1/4/14.001.009.jpg" /></div>
+    <div class="box"><img class="product-image" src="http://varnish.d45ae8f.feature.itonomy.nl/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/j/e/je_wordt_bedankt.png" /></div>
+    <div class="box"><img class="product-image" src="http://varnish.d45ae8f.feature.itonomy.nl/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/8/1/81bkr0ymt8l._ux679_.jpg" /></div>
+    </div>
+    <div class="box">
+        <div style="position:relative;width:33%;height:100%;"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/hdkZn5px_i5l19bddnWpE5xMEU8-x0VV" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
+    </div>
+    <div class="box">
+        <div style="position:relative;width:33%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/9L1Zl6hnyGPaYjAs6IHnW8ELLzveCL5n" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
+    </div>
+    <div class="box">
+        <div style="position:relative;width:33%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/JzmQEuU9t4W64VBCAMZvf2R6JOSMQiXg" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
+    </div>
+    <div class="hr">&nbsp;</div>
+    <div class="box-2">
+        <div style="position:relative;width:80%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/_1bSXlrcnW6DkNswdSQofal5My4Z8fYl" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
+    </div>
+    <div class="box">
+        <div style="position:relative;width:33%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/bQ2Z-miDXBhgzw_guOgr6VM1CcfgRSG8" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
+    </div>
 </div>
 {% endblock %}
