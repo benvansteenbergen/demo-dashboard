@@ -6,7 +6,7 @@
 
 <style>
     * { font-family: 'Montserrat', sans-serif; }
-    h1 {padding: 30px 0 30px 0; font-size: 40px;}
+    h1 {padding: 0px 0 30px 0; font-size: 40px;}
     .ka-ching {display:none; position:absolute; top:0px; left:0px; width: 100%; height:100%}
     .box { float:left; width:33%; height:280px; display: flex; justify-content: center; align-items: center; margin: 10px 0; }
     .box-2 { float:left; width:66%; height:280px; display: flex; justify-content: center; align-items: center }
@@ -18,6 +18,11 @@
         margin-right: 20px;
         float:left;
     }
+    .qr img {
+        width: 200px;
+        margin-right: 12%;
+        float:right;
+    }
     .container {   }
     .box div { align-self:center}
     .hr { border: 0;
@@ -27,6 +32,7 @@
         margin: 50px 0 50px 0;
         display:block;
     }
+    .counterbar  {margin: 0px auto; width:350px; }
     audio {}
 </style>
 <script type="text/javascript">
@@ -45,7 +51,7 @@
 
                         var audio = new Audio("audio/sound.mp3");
                         audio.play().then(function (val){
-                            setTimeout(function(){ location.reload(); }, 5000);
+
                         }).catch( function (error) {
                             console.log(error)
                         })
@@ -59,12 +65,28 @@
             })
         }, 5000);
     })();
+
+    function timedRefresh(timeoutPeriod) {
+        var timer = setInterval(function() {
+            if (timeoutPeriod > 0) {
+                timeoutPeriod -= 1;
+
+                document.getElementById("countdown").innerHTML = timeoutPeriod + ".." + "";
+            } else {
+                clearInterval(timer);
+                window.location.href = window.location.href;
+            };
+        }, 1000);
+    };
+
+    timedRefresh(60);
 </script>
 <div class="wrapper">
-
     <div class="ka-ching">
         <div style="width:100vw;height:100vh;position:absolute; z-index:9999;top:0px;left:0px"><iframe src="https://giphy.com/embed/hDlhfr5LTemEo" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
     </div>
+    <div class="counterbar">Refreshing dashboard in <span id="countdown"></span> seconden</div>
+    <div class="qr"><img src="images/download.png" /></div>
     <div class="logo"><img src="http://varnish.d45ae8f.feature.itonomy.nl/media/logo/stores/1/logo_1sqm.png" /></div>
     <div><h1>Verkopen (vandaag)</h1></div>
     <div style="width: 100%; clear:both">
@@ -73,20 +95,23 @@
     <div class="box"><img class="product-image" src="http://varnish.d45ae8f.feature.itonomy.nl/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/8/1/81bkr0ymt8l._ux679_.jpg" /></div>
     </div>
     <div class="box">
-        <div style="position:relative;width:33%;height:100%;"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/hdkZn5px_i5l19bddnWpE5xMEU8-x0VV" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
+        <div style="position:relative;width:33%;height:100%;"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/aoXVK3fmeMnrqacgurRlbdE-DVpNwgUB" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
     </div>
     <div class="box">
-        <div style="position:relative;width:33%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/9L1Zl6hnyGPaYjAs6IHnW8ELLzveCL5n" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
+        <div style="position:relative;width:33%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/fIjynyjeGXV015lGyfwJWV9OU7Vkcz59" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
     </div>
     <div class="box">
-        <div style="position:relative;width:33%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/JzmQEuU9t4W64VBCAMZvf2R6JOSMQiXg" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
+        <div style="position:relative;width:33%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/x5EVfO2mdP3HSrNxsJCJ_gNHDNRsx6aU" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
     </div>
     <div class="hr">&nbsp;</div>
-    <div class="box-2">
+    <div class="box">
         <div style="position:relative;width:80%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/_1bSXlrcnW6DkNswdSQofal5My4Z8fYl" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
     </div>
     <div class="box">
-        <div style="position:relative;width:33%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/bQ2Z-miDXBhgzw_guOgr6VM1CcfgRSG8" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
+        <div style="position:relative;width:80%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/_1bSXlrcnW6DkNswdSQofal5My4Z8fYl" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
+    </div>
+    <div class="box">
+        <div style="position:relative;width:33%;height:100%"><iframe width="384" height="216" src="https://insights-embed.newrelic.com/embedded_widget/PFEZ5w3nwoE-PMHTaQJKgdjPJAsryHI7" frameborder="0" style="position:absolute;width:100%;height:100%"></iframe></div>
     </div>
 </div>
 {% endblock %}
